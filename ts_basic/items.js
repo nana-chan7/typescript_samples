@@ -1,0 +1,68 @@
+"use strict";
+// 2023-12-06 4.week2
+Object.defineProperty(exports, "__esModule", { value: true });
+// 配列
+var itemNames = ["コーヒー", "紅茶", "ほうじ茶"];
+console.log(itemNames);
+// オブジェクト配列
+var item1 = {
+    id: 1,
+    name: "コーヒー",
+    price: 350,
+    isSale: false,
+};
+var item2 = {
+    id: 2,
+    name: "紅茶",
+    price: 400,
+    isSale: true,
+};
+var item3 = {
+    id: 3,
+    name: "ほうじ茶",
+    // price: "aaa", // ↓ エラーになる
+    price: 300,
+    isSale: false,
+};
+// var items: object[] = [item1, item2, item3]; // ← あまりよくない書き方
+var items = [item1, item2, item3];
+console.log(items, typeof items);
+var borderPrice = 350;
+// 型推論だと動くが、型を明示的に定義するとエラーになる (item.price)
+var filterItems = items.filter(function (item) { return item.price <= borderPrice; });
+console.log(filterItems);
+// function
+// function calculateTotalPrice(price, amount) { //: runtime error any型のため
+// function calculateTotalPrice(price: number, amount: number): number { // 型を付ける
+//     var totalPrice = price * amount;
+//     return totalPrice;  
+// }
+// anonymus function
+// const calculateTotalPrice = function(price:number, amount:number): number {
+//    var totalPrice = price * amount; 
+//    return totalPrice; 
+// }
+//anonymus function
+var calculateTotalPrice = function (price, amount) {
+    var totalPrice = price * amount;
+    return totalPrice;
+};
+function findItem(id) {
+    var result = items.find(function (item) { return item.id == id; });
+    return result;
+    // if (result) {
+    //     return result;
+    // } else {
+    //     return { id: 0, name: "", price: 0 };
+    // }
+}
+var amount = 5;
+var totalPrice = calculateTotalPrice(item1.price, amount);
+console.log(totalPrice);
+var itemId = 1;
+// var itemId = 5; // :undefined
+var selectItem = findItem(itemId);
+console.log(selectItem);
+// undefined: 未定義
+// implicitly: 暗黙的
+// 可読性のあるプログラムを書く
