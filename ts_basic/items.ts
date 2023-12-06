@@ -32,13 +32,42 @@ console.log(filterItems);
 
 // function
 // function calculateTotalPrice(price, amount) { //: runtime error any型のため
-function calculateTotalPrice(price: number, amount: number): number { // 型を付ける
-    var totalPrice = price * amount;
-    return totalPrice;  
+// function calculateTotalPrice(price: number, amount: number): number { // 型を付ける
+//     var totalPrice = price * amount;
+//     return totalPrice;  
+// }
+
+// anonymus function
+// const calculateTotalPrice = function(price:number, amount:number): number {
+//    var totalPrice = price * amount; 
+//    return totalPrice; 
+// }
+
+//anonymus function
+const calculateTotalPrice = (price:number, amount:number): number => {
+    var totalPrice = price * amount; 
+    return totalPrice;
+}
+
+function findItem(id: number) {
+    var result = items.find((item) => item.id == id);
+    return result;
+    // if (result) {
+    //     return result;
+    // } else {
+    //     return { id: 0, name: "", price: 0 };
+    // }
 }
 
 var amount = 5;
 var totalPrice = calculateTotalPrice(item1.price, amount); 
 console.log(totalPrice);
 
+var itemId = 1;
+// var itemId = 5; // :undefined
+var selectItem = findItem(itemId);
+console.log(selectItem);
+
+// undefined: 未定義
 // implicitly: 暗黙的
+// 可読性のあるプログラムを書く
