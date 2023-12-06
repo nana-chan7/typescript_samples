@@ -31,7 +31,7 @@ var filterItems = items.filter((item) => item.price <= borderPrice);
 console.log(filterItems);
 
 // function
-// function calculateTotalPrice(price, amount) { //: runtime error
+// function calculateTotalPrice(price, amount) { //: runtime error any型のため
 function calculateTotalPrice(price: number, amount: number): number { // 型を付ける
     var totalPrice = price * amount;
     return totalPrice;  
