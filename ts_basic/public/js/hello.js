@@ -1,3 +1,4 @@
+"use strict";
 // 2023-11-29 4.week1
 var message = "Hello!!!";
 console.log(message);

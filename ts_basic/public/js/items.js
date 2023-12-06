@@ -29,7 +29,7 @@ var items = [item1, item2, item3];
 console.log(items, typeof items);
 var borderPrice = 350;
 // 型推論だと動くが、型を明示的に定義するとエラーになる (item.price)
-var filterItems = items.filter(function (item) { return item.price <= borderPrice; });
+var filterItems = items.filter((item) => item.price <= borderPrice);
 console.log(filterItems);
 // function
 // function calculateTotalPrice(price, amount) { //: runtime error any型のため
@@ -43,12 +43,12 @@ console.log(filterItems);
 //    return totalPrice; 
 // }
 //anonymus function
-var calculateTotalPrice = function (price, amount) {
+const calculateTotalPrice = (price, amount) => {
     var totalPrice = price * amount;
     return totalPrice;
 };
 function findItem(id) {
-    var result = items.find(function (item) { return item.id == id; });
+    var result = items.find((item) => item.id == id);
     return result;
     // if (result) {
     //     return result;
