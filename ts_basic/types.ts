@@ -15,6 +15,7 @@ export type Item = {
     id: number;
     name: string;
     price: number;
+    isSale: boolean;
 }
 
 // インターフェース
@@ -29,3 +30,4 @@ export type Item = {
 // }
 
 // 設計
+// あらかじめ設計しておくことで、後で間違えを検知しやすくなる
