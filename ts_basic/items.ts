@@ -29,3 +29,16 @@ var borderPrice = 350;
 // 型推論だと動くが、型を明示的に定義するとエラーになる (item.price)
 var filterItems = items.filter((item) => item.price <= borderPrice);
 console.log(filterItems);
+
+// function
+// function calculateTotalPrice(price, amount) { //: runtime error
+function calculateTotalPrice(price: number, amount: number): number { // 型を付ける
+    var totalPrice = price * amount;
+    return totalPrice;  
+}
+
+var amount = 5;
+var totalPrice = calculateTotalPrice(item1.price, amount); 
+console.log(totalPrice);
+
+// implicitly: 暗黙的
